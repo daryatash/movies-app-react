@@ -1,0 +1,182 @@
+.film-page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-block: 32px;
+  color: black;
+}
+
+.film-page h2 {
+  margin: 0;
+}
+
+.film-page__hero {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+  align-items: start;
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+}
+
+.film-page__poster {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+}
+
+.film-page__info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.film-page__title {
+  font-size: 36px;
+}
+
+.film-page__original {
+  font-size: 18px;
+  color: var(--text);
+}
+
+.film-page__meta {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  gap: 8px;
+}
+
+.film-page__slogan {
+  font-size: 18px;
+  font-style: italic;
+  opacity: 0.85;
+  padding-left: 16px;
+  border-left: 3px solid var(--accent);
+}
+
+.film-page__ratings {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+}
+
+.film-page__rating {
+  padding-left: 20px;
+  position: relative;
+}
+
+.film-page__rating::before {
+  content: "★";
+  color: var(--accent);
+  font-size: 18px;
+  position: absolute;
+  left: 0px;
+}
+
+.film-page__link {
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent);
+  padding: 10px 18px;
+  align-self: start;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: background 0.2s ease, transfosrm 0.15s ease;
+}
+
+.film-page__link:hover {
+  background: #8e2ee0;
+  transform: translateY(-1px);
+}
+
+.film-page__description,
+.film-page__details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+}
+
+
+.film-page__description p,
+.film-page__details span {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.film-page__annotation {
+  font-size: 14px;
+  color: var(--text);
+  opacity: 0.75;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent-border);
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 1024px) {
+  .film-page__hero {
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+  }
+
+  .film-page__title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .film-page {
+    gap: 28px;
+    padding-block: 20px 48px;
+  }
+
+  .film-page__hero {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .film-page__poster {
+    max-width: 200px;
+  }
+
+  .film-page__info {
+    align-items: center;
+    width: 100%;
+  }
+
+  .film-page__ratings,
+  .film-page__meta {
+    justify-content: center;
+  }
+
+  .film-page__slogan {
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .film-page__link {
+    align-self: center;
+  }
+
+  .film-page__title {
+    font-size: 26px;
+    letter-spacing: -0.5px;
+  }
+
+  .film-page__description,
+  .film-page__details {
+    padding: 16px;
+  }
+}
