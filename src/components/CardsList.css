@@ -1,0 +1,19 @@
+.cards-list {
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: 0;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.cards-list--row {
+  display: flex; 
+}
+
+.cards-list--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}

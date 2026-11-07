@@ -1,0 +1,61 @@
+.header {
+  padding-block: 16px;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  color: black;
+}
+
+.header__logo-title {
+  font-family: 'PT Sans Narrow';
+  font-size: 52px;
+
+  @media (max-width: 768px) {
+    font-size: 42px;
+  }
+}
+
+.header__logo-icon {
+  @media (max-width: 768px) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  @media (max-width: 768px) {
+    gap: 2px;
+  }
+}
+
+.header__nav-link {
+  padding: 16px 12px;
+  text-decoration: none;
+  color: black;
+  font-family: 'Noto Sans';
+  font-size: 18px;
+
+  @media (max-width: 768px) {
+    padding: 14px 10px;
+    font-size: 16px;
+  }
+}
+
+.header__nav-link--active {
+  color: chocolate;
+}

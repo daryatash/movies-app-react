@@ -1,0 +1,26 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 16px;
+}
+
+.section__title {}
+
+.section__link {
+  text-decoration: none;
+  color: black;
+  border: 3px black solid;
+  border-radius: 10px;
+  padding: 8px 12px;
+  
+}
+
+.section__content {}
