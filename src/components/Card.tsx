@@ -1,10 +1,10 @@
 import { Link, useLocation } from "react-router"
 import { getPosterUrl } from "../utils"
 import './Card.css'
-import type { FilmsItem } from "../types"
+import type { CardFilm } from "../types"
 
 type CardProps = {
-  film: FilmsItem
+  film: CardFilm
 }
 
 export default function Card({film}: CardProps) {

@@ -3,6 +3,7 @@ import { useFetch } from "../hooks/useFetch"
 import { getFilmById } from "../api/films"
 import { formatAgeLimit, formatType, getPosterUrl } from "../utils"
 import './FilmPage.css'
+import { useFavourites } from "../context/FavouritesContext"
 
 function FilmPage() {
   const { id } = useParams()
@@ -22,7 +23,11 @@ function FilmPage() {
   const location = useLocation()
   const from = location.state?.from || "/"
 
-  
+  const {
+    toggle,
+    isFavourite
+  } = useFavourites()
+
   if (loading) return <div>Загрузка…</div>
   if (error) return <div>Ошибка: {error.message} <button onClick={onRetry}>Повторить</button></div>
   if (!film) return <div>Фильм не найден</div>
@@ -67,6 +72,19 @@ function FilmPage() {
               Открыть на Кинопоиске
             </a>
           }
+          {id && <button 
+            onClick={() => {
+              toggle({
+                kinopoiskId: film.kinopoiskId,
+                nameRu: film.nameRu,
+                nameOriginal: film.nameOriginal,
+                posterUrl: film.posterUrl,
+                year: film.year,
+              })
+            }}
+          >
+            {isFavourite(film.kinopoiskId) ? 'Удалить из избранного' : 'Добавить в избранное'}
+          </button>}
         </div>
       </div>
       <section className="film-page__description">

@@ -1,9 +1,9 @@
-import type { FilmsItem } from "../types"
+import type { CardFilm } from "../types"
 import Card from "./Card"
 import './CardsList.css'
 
 type CardsListProps = {
-  films: FilmsItem[],
+  films: CardFilm[],
   variant: "row" | "grid"
 }
 

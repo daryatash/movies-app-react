@@ -17,6 +17,14 @@ export type FilmsItem = {
   genres: Genre[] | null,
 }
 
+export type CardFilm = {
+  kinopoiskId: number,
+  nameRu: string | null,
+  nameOriginal: string | null,
+  posterUrl: string,
+  year: number | null,
+}
+
 export type Film = {
   kinopoiskId: number,
   nameRu: string | null,

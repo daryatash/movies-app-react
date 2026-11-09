@@ -1,7 +1,12 @@
 import { NavLink, Link } from "react-router"
 import './Header.css'
+import { useFavourites } from "../context/FavouritesContext"
 
 export default function Header() {
+  const {
+    favourites
+  } = useFavourites()
+
   return (
     <header className="header">
       <div className="container header__inner">
@@ -36,6 +41,7 @@ export default function Header() {
             to="/favourites"
           >
             Избранное
+            <span className="counter">{favourites.length}</span>
           </NavLink>
         </nav>    
       </div>
