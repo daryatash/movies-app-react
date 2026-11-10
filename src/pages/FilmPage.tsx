@@ -4,6 +4,8 @@ import { getFilmById } from "../api/films"
 import { formatAgeLimit, formatType, getPosterUrl } from "../utils"
 import './FilmPage.css'
 import { useFavourites } from "../context/FavouritesContext"
+import RelationsSection from "../components/RelationsSection"
+import SimilarsSection from "../components/SimilarsSection"
 
 function FilmPage() {
   const { id } = useParams()
@@ -33,6 +35,7 @@ function FilmPage() {
   if (!film) return <div>Фильм не найден</div>
 
   return (
+    <>
     <div className="film-page">
       <Link to={from}>Назад</Link>
       <div className="film-page__hero">
@@ -100,7 +103,9 @@ function FilmPage() {
         {film.ratingMpaa && <span>Рейтинг MPAA: {film.ratingMpaa.toUpperCase()}</span>}
       </section>
     </div>
-
+    <RelationsSection />
+    <SimilarsSection />
+  </>
   )
 }
 

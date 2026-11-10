@@ -22,7 +22,7 @@ export type CardFilm = {
   nameRu: string | null,
   nameOriginal: string | null,
   posterUrl: string,
-  year: number | null,
+  year?: number | null,
 }
 
 export type Film = {
@@ -57,4 +57,20 @@ type Country = {
 
 type Genre = {
   genre: string,
+}
+
+export type FilmRelationsList = {
+  total: number,
+  totalPages: number,
+  items: FilmRelations[]
+}
+
+export type FilmRelations = {
+  kinopoiskId: number,
+  nameRu: string | null,
+  nameEn: string | null,
+  nameOriginal: string | null,
+  posterUrl: string,
+  posterUrlPreview: string,
+  relationType: 'SIMILAR' | 'SEQUEL' | 'SPOOFED' | 'REFERENCES_IN' | 'REFERENCES' | 'PREQUEL' | 'EDITED_INTO' | 'SPIN_OFF'
 }
